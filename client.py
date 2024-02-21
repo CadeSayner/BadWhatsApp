@@ -61,9 +61,12 @@ def showMainMenu():
                 print("Message Received:", message)
                 if message.decode() == "REQ-COMMUNICATION":
                     print("Request to communicate received")
+
+                    # Three of these because UDP is unreliable as fuck
                     serverSocket.sendto("OKAY".encode(), clientAddress)
                     serverSocket.sendto("OKAY".encode(), clientAddress)
                     serverSocket.sendto("OKAY".encode(), clientAddress)
+                    
                     connectedToPeer = True
                     break
                 else:

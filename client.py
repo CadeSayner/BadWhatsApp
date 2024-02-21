@@ -62,6 +62,8 @@ def showMainMenu():
                 if message.decode() == "REQ-COMMUNICATION":
                     print("Request to communicate received")
                     serverSocket.sendto("OKAY".encode(), clientAddress)
+                    serverSocket.sendto("OKAY".encode(), clientAddress)
+                    serverSocket.sendto("OKAY".encode(), clientAddress)
                     connectedToPeer = True
                     break
                 else:
